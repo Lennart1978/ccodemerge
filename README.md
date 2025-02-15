@@ -1,6 +1,6 @@
 # CCodemerge
 
-CCodmerge is a command-line utility that merges multiple C source files into a single text file. It recursively scans directories for C source files (.c), header files (.h), Makefiles, and meson.build files, then combines them in a structured manner.
+CCodemerge is a command-line utility that merges multiple C source files into a single text file. It recursively scans directories for C source files (.c), header files (.h), Makefiles, and meson.build files, then combines them in a structured manner.
 
 ## Features
 
