@@ -8,6 +8,7 @@
 
 #define MAX_PATH_LENGTH 4096
 #define INITIAL_CAPACITY 128
+#define PROGB_WIDTH 50
 
 // List of directories to exclude
 static const char *EXCLUDED_DIRS[] = {
@@ -205,10 +206,10 @@ void print_progress(size_t current, size_t total)
 {
     const int bar_width = 50;
     float progress = (float)current / total;
-    int pos = bar_width * progress;
+    int pos = PROGB_WIDTH * progress;
 
     printf("\r[");
-    for (int i = 0; i < bar_width; ++i)
+    for (int i = 0; i < PROGB_WIDTH; ++i)
     {
         printf(i < pos ? "=" : " ");
     }
@@ -315,9 +316,8 @@ int main()
 
     // Ensure progress bar shows 100%
     print_progress(total, total);
-    printf("\n");
 
     if (status == 0)
-        printf("Files successfully merged into 'merged.txt'\n");
+        printf("\nFiles successfully merged into 'merged.txt'\n");
     return status;
 }
