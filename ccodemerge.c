@@ -67,7 +67,7 @@ int copyFileContent(FILE *dest, const char *filepath)
         fprintf(stderr, "Error opening file: %s (Reason: %s)\n", filepath, strerror(errno));
         return -1;
     }
-    is_first ? fprintf(dest, "CCodemerge v%s\nhttps://github.com/Lennart1978/ccodemerge\n\nContent of all files:\n\n", VERSION) : fprintf(dest, "\n");
+    is_first ? fprintf(dest, "# Created by CCodemerge v%s\n# https://github.com/Lennart1978/ccodemerge\n\nContent of all files:\n\n", VERSION) : fprintf(dest, "\n");
     is_first = false;
 
     fprintf(dest, "File : %s:\n\n", filepath);
