@@ -9,6 +9,7 @@
 #define MAX_PATH_LENGTH 4096
 #define INITIAL_CAPACITY 128
 #define PROGB_WIDTH 50
+#define VERSION "1.0"
 
 // List of directories to exclude
 static const char *EXCLUDED_DIRS[] = {
@@ -66,7 +67,7 @@ int copyFileContent(FILE *dest, const char *filepath)
         fprintf(stderr, "Error opening file: %s (Reason: %s)\n", filepath, strerror(errno));
         return -1;
     }
-    is_first ? fprintf(dest, "Content of all files:\n\n") : fprintf(dest, "\n");
+    is_first ? fprintf(dest, "CCodemerge v%s\nhttps://github.com/Lennart1978/ccodemerge\n\nContent of all files:\n\n", VERSION) : fprintf(dest, "\n");
     is_first = false;
 
     fprintf(dest, "File : %s:\n\n", filepath);
@@ -204,7 +205,6 @@ int scan_directory(const char *dir_path, char ***files, size_t *capacity, size_t
 // Shows a progress bar
 void print_progress(size_t current, size_t total)
 {
-    const int bar_width = 50;
     float progress = (float)current / total;
     int pos = PROGB_WIDTH * progress;
 
