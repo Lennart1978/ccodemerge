@@ -56,20 +56,46 @@ The merged output file follows this structure:
 - A header indicating the start of the merged content
 - Each file is preceded by its path
 - Clear separators between files
-- Files are organized by type (Makefiles → meson.build → .h → .c)
+- Files are organized by type (build system → header → sourcecode files)
 
 ## Excluded Directories
 
 The following directories are automatically excluded from processing:
 
-- build/builddir
-- node_modules
-- venv/env/.venv/.env
-- .cache
-- .idea
-- cmake-build-debug
-- dist
-- target
+".cache",
+".env",
+".idea",
+".venv",
+"build",
+"builddir",
+"cmake-build-debug",
+"cmake-build-release",    
+"dist",
+"env",
+"node_modules",
+"target",
+"venv",
+".git",
+".vscode",
+".vs",                    
+".pytest_cache",          
+"__pycache__",            
+"out",                    
+"bin",                   
+"obj",                  
+"Debug",                  
+"Release",                
+"x64",                   
+"x86",                    
+"deps",                   
+"vendor",               
+"external",              
+"third_party",          
+".github",                
+".gitlab",               
+"coverage",           
+"docs/_build",            
+"logs"    
 
 ## Building from Source
 
